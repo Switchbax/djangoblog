@@ -11,18 +11,15 @@
         <h3>Autor: Switchbax</h3>
         <h4>Wszystkie prawa zastrzezone</h4>
     </div>
+        {% comment %}
+        <p> Tutaj lista postow</p>
+        {% endcomment %}
+        {% for post in posts%}
     <div>
-        <p>to jest akapit</p>
-        <em>to jest wyrozniony tekst</em><br>
-        <strong> to jest pogrubiony tekst </strong><br>
-        <a href="https://www.strefakursow.pl">Link</a>
+        <p>opublikowany: {{ post.published_date }}</p>
+        <h2> <a href =""> {{ post.title }}</a></h2>
+        <em>{{ post.text|linebreaksbr }}</em>
     </div>
-    <div>
-    <ul>
-        <li>elementy listy</li>
-        <li>elementy listy</li>
-        <li>elementy listy</li>
-    </ul>
-    </div>
+    {% endfor %}
 </body>
 </html>
